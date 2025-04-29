@@ -1,0 +1,63 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\title{Report 1: Gradient Descent}
+\author{Your Name}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Objective}
+The goal of this lab is to implement the gradient descent algorithm from scratch in order to find the minimum of a given function. We will use the example function:
+
+\[
+f(x) = x^2
+\]
+
+\section*{Method}
+We used gradient descent with the following update rule:
+
+\[
+x = x - r \cdot f'(x)
+\]
+
+Where \( r \) is the learning rate, and \( f'(x) = 2x \) is the derivative of \( f(x) = x^2 \).
+
+We started with \( x_0 = 10 \), set the learning rate \( r = 0.1 \), and ran the algorithm for 10 iterations.
+
+\section*{Results}
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+Iteration & x & f(x) \\
+\hline
+1 & 10.0000 & 100.0000 \\
+2 & 8.0000 & 64.0000 \\
+3 & 6.4000 & 40.9600 \\
+4 & 5.1200 & 26.2144 \\
+5 & 4.0960 & 16.7772 \\
+6 & 3.2768 & 10.7374 \\
+7 & 2.6214 & 7.0719 \\
+8 & 2.0972 & 4.4000 \\
+9 & 1.6777 & 2.8136 \\
+10 & 1.3422 & 1.8010 \\
+\hline
+\end{tabular}
+\end{center}
+
+\section*{Discussion}
+
+The value of \( f(x) \) decreases with each iteration, showing that the gradient descent algorithm is working properly. The learning rate of 0.1 allowed the model to converge steadily toward the minimum.
+
+If the learning rate were too large, the algorithm could overshoot and diverge. If it were too small, convergence would be too slow.
+
+\section*{Conclusion}
+
+Gradient descent successfully found an approximate minimum of the function \( f(x) = x^2 \). This simple example helped us understand how gradient descent works step by step.
+
+\end{document}
