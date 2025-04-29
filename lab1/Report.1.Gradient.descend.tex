@@ -4,22 +4,22 @@
 \usepackage{graphicx}
 
 \title{Report 1: Gradient Descent}
-\author{Your Name}
-\date{}
+\author{Dang Vu Son Tung}
+\date{29/04/2025}
 
 \begin{document}
 
 \maketitle
 
 \section*{Objective}
-The goal of this lab is to implement the gradient descent algorithm from scratch in order to find the minimum of a given function. We will use the example function:
+The goal of this lab is to implement the gradient descent algorithm from scratch to find the minimum of a given function. The example function used is: 
 
 \[
 f(x) = x^2
 \]
 
 \section*{Method}
-We used gradient descent with the following update rule:
+I used gradient descent with the following update rule:
 
 \[
 x = x - r \cdot f'(x)
@@ -27,9 +27,9 @@ x = x - r \cdot f'(x)
 
 Where \( r \) is the learning rate, and \( f'(x) = 2x \) is the derivative of \( f(x) = x^2 \).
 
-We started with \( x_0 = 10 \), set the learning rate \( r = 0.1 \), and ran the algorithm for 10 iterations.
+The experiment starts from \( x_0 = 10 \) and runs for 10 iterations.
 
-\section*{Results}
+\section*{Results (Learning rate = 0.1)}
 
 \begin{center}
 \begin{tabular}{|c|c|c|}
@@ -50,14 +50,43 @@ Iteration & x & f(x) \\
 \end{tabular}
 \end{center}
 
+\section*{Comparison of Learning Rates}
+
+To analyze the effect of different learning rates, I tested three values: \( r = 0.01 \), \( r = 0.1 \), and \( r = 0.5 \). The final results after 10 steps are:
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+Learning Rate & Final x & Final f(x) \\
+\hline
+0.01 & 8.3375 & 69.5135 \\
+0.10 & 1.3422 & 1.8014 \\
+0.50 & 0.0000 & 0.0000 \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\includegraphics[width=0.85\textwidth]{plot.png}
+\end{center}
+
+\textbf{Note:} The graph above shows how the function value \( f(x) \) decreases over iterations for each learning rate.
+
 \section*{Discussion}
 
-The value of \( f(x) \) decreases with each iteration, showing that the gradient descent algorithm is working properly. The learning rate of 0.1 allowed the model to converge steadily toward the minimum.
+The value of \( f(x) \) consistently decreases with each iteration, confirming that gradient descent works well on convex functions like \( f(x) = x^2 \).
 
-If the learning rate were too large, the algorithm could overshoot and diverge. If it were too small, convergence would be too slow.
+From the comparison:
+\begin{itemize}
+    \item \( r = 0.01 \): very slow convergence, still far from minimum after 10 steps.
+    \item \( r = 0.10 \): good balance between speed and stability.
+    \item \( r = 0.50 \): converges fastest, but in more complex functions it may overshoot or diverge.
+\end{itemize}
+
+Choosing the optimal learning rate depends on the specific problem. A moderate value like 0.1 is often a good default.
 
 \section*{Conclusion}
 
-Gradient descent successfully found an approximate minimum of the function \( f(x) = x^2 \). This simple example helped us understand how gradient descent works step by step.
+Gradient descent successfully found the minimum of \( f(x) = x^2 \) in different settings. The experiment helped me understand how learning rate influences convergence and why tuning it is important.
 
 \end{document}
