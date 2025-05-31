@@ -1,7 +1,8 @@
 import math
 
-def sigmoid(z: float) -> float:
+def sigmoid(z):
     return 1 / (1 + math.exp(-z))
 
-def sigmoid_derivative(z: float) -> float:
-    return z * (1 - z)
+def sigmoid_derivative(z):
+    s = sigmoid(z)
+    return s * (1 - s)

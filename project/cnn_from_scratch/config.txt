@@ -1,0 +1,22 @@
+# CNN Configuration File
+# Format: parameter_name=value
+
+# Convolutional Layer 1
+conv1_filters=8
+conv1_kernel_size=3
+conv1_input_channels=1
+
+# Convolutional Layer 2
+conv2_filters=16
+conv2_kernel_size=3
+
+# Pooling Layer
+pool_kernel_size=2
+pool_stride=2
+
+# Fully Connected Layer
+fc_output_size=10
+
+# Input dimensions (for calculating FC input size)
+input_height=28
+input_width=28
